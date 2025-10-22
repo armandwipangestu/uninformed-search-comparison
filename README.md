@@ -25,6 +25,19 @@
     -   [Result Analysis](#result-analysis)
 -   [Conclusion and Recommendations](#conclusions-and-recommendations)
 -   [Choose BFS or DFS or UCS?](#choose-bfs-or-dfs-or-ucs)
+-   [Real-World Application](#real-world-application)
+    -   [Breadth-First Search (BFS)](#breadth-first-search-bfs)
+        -   [Concept BFS](#concept-bfs)
+        -   [Characteristics BFS](#characteristics-bfs)
+        -   [Application BFS](#application-bfs)
+    -   [Depth-First Search (DFS)](#depth-first-search-dfs)
+        -   [Concept DFS](#concept-dfs)
+        -   [Characteristics DFS](#characteristics-dfs)
+        -   [Application DFS](#application-dfs)
+    -   [Uniformed-Cost Search (UCS)](#uniform-cost-search-ucs)
+        -   [Concept UCS](#concept-ucs)
+        -   [Characteristics UCS](#characteristic-ucs)
+        -   [Application UCS](#application-ucs)
 -   [Installation on Linux](#installation-on-linux)
 -   [Installation on Windows](#installation-on-windows)
 
@@ -123,6 +136,84 @@ The answer is depends on the situation
 
 -   Want to find the optimal solution with cost effective
 -   If have different weight on each edge or node
+
+---
+
+## Real-World Application
+
+### Breadth-First Search (BFS)
+
+#### Concept BFS
+
+BFS explores nodes level by level, ensuring that the shallowest node (or shortest path) is found first. It guarantees finding the **shortest path** when all edges have equal cost.
+
+#### Characteristics BFS
+
+-   Use **Queue (FIFO)** data structure
+-   **Complete:** will always find a solution if one exists
+-   **Optimal:** when all edge costs are equal
+
+#### Application BFS
+
+| Domain               | Example                                           | Description                                                                     |
+| -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **Game Pathfinding** | NPC movement in 2D games (_Pac-Man_, _Bomberman_) | Ensures shortest route from start to goal in a grid map.                        |
+| **Puzzle Solving**   | 8-Puzzle or sliding tile games                    | Finding the minimal number of moves to reach the goal configuration.            |
+| **Social Networks**  | "Friend of a Friend" recommendation systems       | Finds the shortest connection path between two users in a social graph.         |
+| **AI Planning**      | Non-weighted navigation in simple environments    | Useful for path exploration in grid-based maps where all steps have equal cost. |
+
+> [!NOTE]
+> Analogy: BFS is like searching for a key by checking every room on the first floor before going upstairs - systematic and thorough.
+
+### Depth-First Search (DFS)
+
+#### Concept DFS
+
+DFS dives deep along one branch before backtracking to explore others. It is **fast and memory-efficient**, but may get stuck in long or infinite branches.
+
+#### Characteristics DFS
+
+-   Uses **Stack (LIFO)** data structure
+-   **Incomplete** for infinite state spaces
+-   **Not Optimal** - may find suboptimal solutions
+
+#### Application DFS
+
+| Domain                    | Example                                | Description                                                                         |
+| ------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------- |
+| **Maze Solving**          | Robot or agent solving a maze          | Explores path deeply and backtracks when hitting a dead end.                        |
+| **Game Tree Exploration** | Tic-Tac-Toe, Chess (early move search) | Explores one branch of possible moves before evaluating alternatives.               |
+| **Compiler Design**       | Abstract Syntax Tree (AST) traversal   | DFS is used to explore hierarchical program structures.                             |
+| **Web Crawling (Simple)** | Crawling websites recursively          | DFS can be used to traverse pages but needs depth limits to prevent infinite loops. |
+
+> [!NOTE]
+> Analogy: DFS is like walking down one hallway until it ends, then going back to try the next hallway.
+
+---
+
+### Uniform-Cost Search (UCS)
+
+#### Concept UCS
+
+UCS generalizes BFS for **weighted graphs**, where each edge has a cost. It always expands the **lowest cumulative cost** path first, ensuring the most efficient route.
+
+#### Characteristic UCS
+
+-   Uses **Priority Queue (Min-Heap)**
+-   **Complete and Optimal** (when all costs are positive)
+-   Slower but guarantees the **lowest-cost solution**
+
+#### Application UCS
+
+| Domain                     | Example                                    | Description                                                              |
+| -------------------------- | ------------------------------------------ | ------------------------------------------------------------------------ |
+| **Navigation Systems**     | Google Maps, Waze, GPS routing             | Finds the path with the shortest distance or least travel time.          |
+| **Robot Motion Planning**  | Path optimization for autonomous robots    | Choose the route with minimum energy or movement cost.                   |
+| **Logistics Optimization** | Delivery or transport cost minimization    | Finds the most cost-efficient delivery route between multiple points.    |
+| **Strategy Games**         | AI movement in terrain with variable costs | Determines best route where terrains have different travel difficulties. |
+
+> [!NOTE]
+> Analogy: UCS is like choosing a driving route that minimizes total fuel cost, not just distance.
 
 ## Installation on Linux
 
