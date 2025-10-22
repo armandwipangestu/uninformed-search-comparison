@@ -1,3 +1,5 @@
+## [1.0.1](https://github.com/armandwipangestu/uninformed-search-comparison/compare/v1.0.0...v1.0.1) (2025-10-22)
+
 # 1.0.0 (2025-10-21)
 
 
