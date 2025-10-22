@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/armandwipangestu/uninformed-search-comparison/compare/v1.1.0...v1.2.0) (2025-10-22)
+
+
+### Features
+
+* add asset pdf file ([e166ae7](https://github.com/armandwipangestu/uninformed-search-comparison/commit/e166ae7053e0a1afb0dcbe032045c878ee069e96))
+
 # [1.1.0](https://github.com/armandwipangestu/uninformed-search-comparison/compare/v1.0.1...v1.1.0) (2025-10-22)
 
 
